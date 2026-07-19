@@ -4,9 +4,13 @@ import { ArrowRight } from "lucide-react";
 export function CTASection() {
   return (
     <section className="container-page pb-20">
-      <div className="relative overflow-hidden rounded-3xl bg-brand-600 px-6 py-14 text-center sm:px-16">
-        <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-500/40 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-accent-500/30 blur-3xl" />
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 px-6 py-14 text-center sm:px-16">
+        <div className="cloud-scene">
+          <div className="cloud-blob cloud-blob-a -top-16 -left-10 h-72 w-96 bg-white/25" />
+          <div className="cloud-blob cloud-blob-b top-1/3 -right-20 h-80 w-80 bg-accent-400/35" />
+          <div className="cloud-blob cloud-blob-c -bottom-24 left-1/4 h-72 w-[28rem] bg-brand-300/30" />
+          <div className="cloud-blob cloud-blob-b top-0 right-1/3 h-56 w-56 bg-white/15" />
+        </div>
         <div className="relative">
           <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">
             Ready to plan a trip that actually fits you?
