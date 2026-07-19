@@ -59,7 +59,7 @@ export async function generateRecommendations(
   }
 
   const candidates = await Experience.find(candidateFilter)
-    .select("title shortDescription category price rating location tags durationDays")
+    .select("title shortDescription category price rating reviewCount location tags durationDays images")
     .limit(40);
 
   if (candidates.length === 0) {

@@ -5,7 +5,12 @@ import { Experience } from "@/lib/types";
 import { Rating } from "@/components/ui/Rating";
 import { Badge } from "@/components/ui/Badge";
 
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80";
+
 export function ExperienceCard({ experience }: { experience: Experience }) {
+  const image = experience.images?.[0] || FALLBACK_IMAGE;
+
   return (
     <Link
       href={`/experiences/${experience._id}`}
@@ -13,7 +18,7 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
     >
       <div className="relative h-44 w-full overflow-hidden">
         <Image
-          src={experience.images[0]}
+          src={image}
           alt={experience.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
