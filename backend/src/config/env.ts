@@ -21,6 +21,6 @@ export const env = {
   demoUserEmail: process.env.DEMO_USER_EMAIL ?? "demo@voyager.app",
   demoUserPassword: process.env.DEMO_USER_PASSWORD ?? "DemoPass123!",
   geminiApiKey: process.env.GEMINI_API_KEY ?? "",
-  geminiModel: process.env.GEMINI_MODEL ?? "gemini-1.5-flash",
+  geminiModel: process.env.GEMINI_MODEL ?? "gemini-flash-latest",
   isProd: process.env.NODE_ENV === "production",
 };
