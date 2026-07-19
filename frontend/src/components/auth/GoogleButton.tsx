@@ -33,13 +33,20 @@ export function GoogleButton({ next = "/" }: { next?: string }) {
 
     window.google.accounts.id.initialize({
       client_id: CLIENT_ID,
+      use_fedcm_for_prompt: true,
+      ux_mode: "popup",
       callback: async (response: { credential: string }) => {
         try {
           await loginWithGoogle(response.credential);
           router.push(next);
         } catch (err) {
+          console.error("Google sign-in callback failed:", err);
           setError(err instanceof ApiClientError ? err.message : "Google sign-in failed.");
         }
+      },
+      error_callback: (err: unknown) => {
+        console.error("Google Identity Services error:", err);
+        setError("Google sign-in was cancelled or blocked by the browser. Try allowing popups for this site.");
       },
     });
     window.google.accounts.id.renderButton(buttonRef.current, {
