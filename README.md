@@ -7,6 +7,22 @@ a tool-using concierge chat assistant.
 
 Built for the Agentic AI Project assignment — a from-scratch project, not a reuse of prior work.
 
+## Live deployment
+
+- **Live site:** https://frontend-delta-seven-19.vercel.app
+- **API:** https://backend-sigma-six-96.vercel.app/api
+- **Repo:** https://github.com/hassan25bd/Agentic-AI-Project
+
+Both are deployed as Vercel Node.js serverless functions/apps, backed by a real MongoDB Atlas
+cluster and a live Gemini API key. Use the **"Try the demo account"** button on the login page for
+an instant logged-in session with saved experiences and review history already populated.
+
+> **Note on AI feature quota:** Google's Gemini free tier caps each model at 20 requests/day per
+> project, tracked separately per model. If the AI itinerary/recommendations/chat features show a
+> rate-limit message, the day's free quota has likely been used up (heavy use while
+> testing/grading can hit this) — it resets daily, or enabling billing on the Gemini API project
+> removes the cap entirely (flash-tier pricing is a fraction of a cent per request).
+
 ## Tech stack
 
 **Frontend:** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · TanStack Query · Recharts
