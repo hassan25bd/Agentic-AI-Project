@@ -8,6 +8,7 @@ import { Itinerary } from "../models/Itinerary";
 import { ChatMessage } from "../models/ChatMessage";
 import { Subscriber } from "../models/Subscriber";
 import { seedExperiences } from "./data/experiences";
+import { seedExperiencesBatch2 } from "./data/experiencesBatch2";
 import mongoose from "mongoose";
 
 const HOSTS = [
@@ -108,8 +109,10 @@ async function seed() {
 
   console.log(`[seed] created ${hostDocs.length} hosts, ${reviewerDocs.length} reviewers, 1 demo user`);
 
+  const allSeedExperiences = [...seedExperiences, ...seedExperiencesBatch2];
+
   const experienceDocs = await Experience.insertMany(
-    seedExperiences.map((exp) => ({
+    allSeedExperiences.map((exp) => ({
       title: exp.title,
       shortDescription: exp.shortDescription,
       fullDescription: exp.fullDescription,
